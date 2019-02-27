@@ -11,7 +11,11 @@ An exporter for [Prometheus](http://prometheus.io/) to monitor an [Apache ZooKee
 
 zookeeper_exporter can be run in two modes: exhibitor and explicit.
 
-In explicit mode (the default), it monitors a list of ZooKeeper servers given as command line args.
+The distinction between 'exhibitor' and 'explicit' is how to specify the zookeeper servers.
 
-In exhibitor mode, the exporter will automatically discover servers by querying [Exhibitor]. Command lines args are assumed to be a list of Exhibitor nodes. To enable exhibitor mode, use the `-exporter.discovery.exhibitor` flag.
+- The default mode is 'explicit', in which the list of zookeeper servers are specified via command line args.
+
+- In the other mode 'exhibitor', zookeeper servers are discovered by querying certain url from some nodes which are also specified by the same command lines args.
+
+To enable 'exhibitor' mode, use the `-exporter.discovery.exhibitor` flag.
 
